@@ -2,13 +2,13 @@ using UnityEngine;
 using System.Collections;
 
 public class VanillaDemon : Demon {
-	string name;
+	string demonName;
 	string TAG = "VanillaDemon";
 
 	// Use this for initialization
 	void Start () {
-		name = this.gameObject.name;
-		TAG += "-" + name;
+		demonName = this.gameObject.name;
+		TAG += "-" + demonName;
 		Log.d (TAG, "Start");
 	}
 	
