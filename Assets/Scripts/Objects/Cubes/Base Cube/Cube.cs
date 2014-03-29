@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public abstract class Demon : MonoBehaviour {
+public abstract class Cube : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

@@ -1,14 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
-public class VanillaDemon : Demon {
-	string demonName;
-	string TAG = "VanillaDemon";
+public class VanillaCube : Cube {
+	string cubeName;
+	string TAG = "VanillaCube";
 
 	// Use this for initialization
 	void Start () {
-		demonName = this.gameObject.name;
-		TAG += "-" + demonName;
+		cubeName = this.gameObject.name;
+		TAG += "-" + cubeName;
 		Log.d (TAG, "Start");
 	}
 	
