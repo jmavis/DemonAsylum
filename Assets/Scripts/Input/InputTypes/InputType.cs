@@ -29,6 +29,32 @@ public abstract class InputType {
 	public abstract void ResetControlState();
 	#endregion
 	
+	#region Notifications
+	protected void NotifyNoObjectClickedOn(Vector2 inputScreenPos){
+		EventManager.instance.RiseOnClickedNoObjectEvent(new ClickPositionArgs(inputScreenPos));
+	}
+
+	protected void NotifyObjectClickedOn(GameObject objectClicked){
+		EventManager.instance.RiseOnClickedObjectEvent(new ClickedObjectArgs(objectClicked));
+	}
+	#endregion
+	
+	protected void SingleClickEvent(Vector2 inputScreenPos){
+		// TODO check if on a menu
+		DelegateClickForObjects(inputScreenPos);	
+	}
+	
+	private void DelegateClickForObjects(Vector2 inputScreenPos) {
+		Ray ray = Camera.main.ScreenPointToRay (inputScreenPos);
+		
+		RaycastHit hit;
+		
+		if (Physics.Raycast(ray, out hit, 25) && !hit.transform.CompareTag("Untagged")) {
+			NotifyObjectClickedOn(hit.transform.gameObject);
+		} else {
+			NotifyNoObjectClickedOn(inputScreenPos);
+		}
+	}
 	
 	// Use this for initialization
 	void Start () {
