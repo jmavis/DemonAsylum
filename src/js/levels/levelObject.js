@@ -11,15 +11,5 @@ var gameState = {
         var light = new Floor(game, 0, 0, polygons);
         light.create();
     },
-    /**
-     * Load in either that last level played TODO
-     * or the first level
-     */
-    getStartingLevel: function() {
-        return
-    },
     update: function() {},
-    nextLevel: function() {
-        this.logger.d("next level");
-    },
 };

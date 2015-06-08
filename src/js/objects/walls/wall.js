@@ -9,12 +9,12 @@
  * @param game
  * @param points Array of [x,y] pairs
  */
-Wall = function(game, points) {
+Floor = function(game, points) {
     this.game = game;
     this._points = points;
 };
 
-Wall.prototype = {
+Floor.prototype = {
     create: function() {
         this.logger = new logger("Wall");
         this.logger.d("create");

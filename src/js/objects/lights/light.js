@@ -8,14 +8,14 @@
  *
  * Based off of http://www.emanueleferonato.com/2015/02/03/play-with-light-and-dark-using-ray-casting-and-visibility-polygons/
  */
-Wall = function(game, xPos, yPos, polygons) {
+Floor = function(game, xPos, yPos, polygons) {
     this.game = game;
     this._x = xPos;
     this._y = yPos;
     this._polygons = polygons;
 };
 
-Wall.prototype = {
+Floor.prototype = {
     create: function() {
         this.logger = new logger("Light");
         this.logger.d("create");
